@@ -7,11 +7,11 @@ import "./App.css";
 function App() {
   const [change, setChange] = useState({
     triangleSize: 130,
-    triangleColor: "red",
+    triangleColor: "#FF0000",
     squareSize: 120,
-    squareColor: "blue",
+    squareColor: "#08FFFF",
     circleSize: 110,
-    circleColor: "green",
+    circleColor: "#04FF00",
   });
 
   const {
@@ -24,13 +24,13 @@ function App() {
   } = change;
 
   useEffect(() => {
-    if (triangleSize === circleSize && triangleSize === squareSize) {
+    if (triangleSize == circleSize && triangleSize == squareSize) {
       alert("todos los tamaños son iguales");
     }
   }, [circleSize, squareSize, triangleSize]);
 
   useEffect(() => {
-    if (triangleColor === circleColor && triangleColor === squareColor) {
+    if (triangleColor == circleColor && triangleColor == squareColor) {
       alert("todos los colores son iguales");
     }
   }, [circleColor, squareColor, triangleColor]);
@@ -73,31 +73,31 @@ function App() {
     >
       <label>
         Tamaño del triangulo
-        <input name="triangleSize" type="number" onChange={handleChange} />
+        <input name="triangleSize" value={triangleSize} type="number" onChange={handleChange} />
       </label>
       <label>
         Color del triangulo
-        <input name="triangleColor" type="color" onChange={handleChange} />
+        <input name="triangleColor" value={triangleColor} type="color" onChange={handleChange} />
       </label>
       <div style={style_triangle} className="triangle"></div>
 
       <label>
         Tamaño del cuadrado
-        <input name="squareSize" type="number" onChange={handleChange} />
+        <input name="squareSize" value={squareSize}  type="number" onChange={handleChange} />
       </label>
       <label>
         Color del cuadrado
-        <input name="squareColor" type="color" onChange={handleChange} />
+        <input name="squareColor" value={squareColor}  type="color" onChange={handleChange} />
       </label>
       <div style={style_square} className="square"></div>
 
       <label>
         Tamaño del circulo
-        <input name="circleSize" type="number" onChange={handleChange} />
+        <input name="circleSize" value={circleSize}  type="number" onChange={handleChange} />
       </label>
       <label>
         Color del circulo
-        <input name="circleColor" type="color" onChange={handleChange} />
+        <input name="circleColor"  value={circleColor} type="color" onChange={handleChange} />
       </label>
       <div style={style_circle} className="circle"></div>
     </div>
@@ -105,3 +105,4 @@ function App() {
 }
 
 export default App;
+
