@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react'
 
 function Triangle({ size, color, handleChange }) {
   const style_triangle = {
-    margin: "20px",
-    width: "0",
+    margin: '20px',
+    width: '0',
     borderBottom: `${size}px solid ${color}`,
     borderLeft: `${size / 1.75}px solid transparent`,
     borderRight: `${size / 1.75}px solid transparent`,
-  };
+  }
 
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        gap: "10px",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        gap: '10px',
       }}
     >
       <label>
@@ -36,9 +36,9 @@ function Triangle({ size, color, handleChange }) {
           onChange={handleChange}
         />
       </label>
-      <div style={style_triangle} className="triangle"></div>
+      <div style={style_triangle}></div>
     </div>
-  );
+  )
 }
 
-export default Triangle;
+export default Triangle

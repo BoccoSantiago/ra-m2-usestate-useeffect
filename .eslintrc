@@ -1,0 +1,7 @@
+{
+    "extends": ["airbnb", "airbnb/hooks", "prettier",  "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/javascript",
+    "plugin:import/typescript"]
+    
+}

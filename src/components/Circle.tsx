@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
 function Circle({ size, color, handleChange }) {
   const style_circle = {
-    margin: "20px",
+    margin: '20px',
     width: `${size}px`,
     height: `${size}px`,
     backgroundColor: color,
-    borderRadius: "50%",
+    borderRadius: '50%',
   };
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        gap: "10px",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        gap: '10px',
       }}
     >
       <label>
@@ -35,7 +35,7 @@ function Circle({ size, color, handleChange }) {
           onChange={handleChange}
         />
       </label>
-      <div style={style_circle} className="circle"></div>
+      <div style={style_circle}></div>
     </div>
   );
 }
