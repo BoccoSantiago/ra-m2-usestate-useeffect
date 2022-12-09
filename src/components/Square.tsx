@@ -8,7 +8,14 @@ function Square({ size, color, handleChange }) {
     backgroundColor: color,
   };
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        gap: "10px",
+      }}
+    >
       <label>
         Tamaño del cuadrado
         <input

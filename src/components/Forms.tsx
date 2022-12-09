@@ -46,22 +46,30 @@ function Forms() {
 
   return (
     <div>
-      <h1>Tarea useState y useEffect</h1>
-      <Triangle
-        size={triangleSize}
-        color={triangleColor}
-        handleChange={handleChange}
-      />
-      <Square
-        size={squareSize}
-        color={squareColor}
-        handleChange={handleChange}
-      />
-      <Circle
-        size={circleSize}
-        color={circleColor}
-        handleChange={handleChange}
-      />
+      <h1 style={{ textAlign: "center" }}>Tarea useState y useEffect</h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Triangle
+          size={triangleSize}
+          color={triangleColor}
+          handleChange={handleChange}
+        />
+        <Square
+          size={squareSize}
+          color={squareColor}
+          handleChange={handleChange}
+        />
+        <Circle
+          size={circleSize}
+          color={circleColor}
+          handleChange={handleChange}
+        />
+      </div>
     </div>
   );
 }
