@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Triangle({ size, color, handleChange }) {
-  const style_triangle = {
+  const styleTriangle = {
     margin: '20px',
     width: '0',
     borderBottom: `${size}px solid ${color}`,
@@ -18,7 +19,7 @@ function Triangle({ size, color, handleChange }) {
         gap: '10px',
       }}
     >
-      <label>
+      <label htmlFor="triangle">
         Tamaño del triangulo
         <input
           name="triangleSize"
@@ -27,7 +28,7 @@ function Triangle({ size, color, handleChange }) {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label htmlFor="triangle">
         Color del triangulo
         <input
           name="triangleColor"
@@ -36,9 +37,15 @@ function Triangle({ size, color, handleChange }) {
           onChange={handleChange}
         />
       </label>
-      <div style={style_triangle}></div>
+      <div style={styleTriangle} />
     </div>
   )
+}
+
+Triangle.propTypes = {
+  size: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 }
 
 export default Triangle

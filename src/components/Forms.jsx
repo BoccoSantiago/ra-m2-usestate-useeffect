@@ -1,9 +1,11 @@
-import React from 'react'
+/* eslint-disable eqeqeq */
+/* eslint-disable no-undef */
+/* eslint-disable no-alert */
+/* eslint-disable react/jsx-no-bind */
+import React, { useEffect, useState } from 'react'
 import Square from './Square'
 import Triangle from './Triangle'
 import Circle from './Circle'
-import { useEffect, useState } from 'react'
-import { ChangeEvent } from 'react'
 
 function Forms() {
   const [change, setChange] = useState({
@@ -24,8 +26,8 @@ function Forms() {
     circleColor,
   } = change
 
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    const value = event.target.value
+  function handleChange(event) {
+    const { value } = event.target
     setChange({
       ...change,
       [event.target.name]: value,

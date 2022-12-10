@@ -1,11 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Square({ size, color, handleChange }) {
-  const style_square = {
+function Circle({ size, color, handleChange }) {
+  const styleCircle = {
     margin: '20px',
     width: `${size}px`,
     height: `${size}px`,
     backgroundColor: color,
+    borderRadius: '50%',
   }
   return (
     <div
@@ -16,27 +18,33 @@ function Square({ size, color, handleChange }) {
         gap: '10px',
       }}
     >
-      <label>
-        Tamaño del cuadrado
+      <label htmlFor="circle">
+        Tamaño del circulo
         <input
-          name="squareSize"
+          name="circleSize"
           value={size}
           type="number"
           onChange={handleChange}
         />
       </label>
-      <label>
-        Color del cuadrado
+      <label htmlFor="circle">
+        Color del circulo
         <input
-          name="squareColor"
+          name="circleColor"
           value={color}
           type="color"
           onChange={handleChange}
         />
       </label>
-      <div style={style_square}></div>
+      <div style={styleCircle} />
     </div>
   )
 }
 
-export default Square
+Circle.propTypes = {
+  size: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+}
+
+export default Circle
