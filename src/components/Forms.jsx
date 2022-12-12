@@ -3,9 +3,12 @@
 /* eslint-disable no-alert */
 /* eslint-disable react/jsx-no-bind */
 import React, { useEffect, useState } from 'react'
-import Square from './Square'
-import Triangle from './Triangle'
-import Circle from './Circle'
+import Square from './atoms/Square'
+import Triangle from './atoms/Triangle'
+import Circle from './atoms/Circle'
+import InputColor from './atoms/InputColor'
+import InputNumber from './atoms/InputNumber'
+import Label from './atoms/Label'
 
 function Forms() {
   const [change, setChange] = useState({
@@ -36,13 +39,13 @@ function Forms() {
 
   useEffect(() => {
     if (triangleSize == circleSize && triangleSize == squareSize) {
-      alert('todos los tamaños son iguales')
+      alert('Todos los tamaños son iguales')
     }
   }, [circleSize, squareSize, triangleSize])
 
   useEffect(() => {
     if (triangleColor == circleColor && triangleColor == squareColor) {
-      alert('todos los colores son iguales')
+      alert('Todos los colores son iguales')
     }
   }, [circleColor, squareColor, triangleColor])
 
@@ -54,23 +57,56 @@ function Forms() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          gap: '10px',
         }}
       >
-        <Triangle
-          size={triangleSize}
-          color={triangleColor}
-          handleChange={handleChange}
-        />
-        <Square
-          size={squareSize}
-          color={squareColor}
-          handleChange={handleChange}
-        />
-        <Circle
-          size={circleSize}
-          color={circleColor}
-          handleChange={handleChange}
-        />
+        <Label htmlFor="triangleSize" title="triangle size: ">
+          <InputNumber
+            name="triangleSize"
+            size={triangleSize}
+            onChange={handleChange}
+          />
+        </Label>
+        <Label htmlFor="triangleColor" title="triangle color: ">
+          <InputColor
+            name="triangleColor"
+            color={triangleColor}
+            onChange={handleChange}
+          />
+        </Label>
+        <Triangle name="triangle" size={triangleSize} color={triangleColor} />
+
+        <Label htmlFor="squareSize" title="Square size: ">
+          <InputNumber
+            name="squareSize"
+            size={squareSize}
+            onChange={handleChange}
+          />
+        </Label>
+        <Label htmlFor="squareColor" title="Square color: ">
+          <InputColor
+            name="squareColor"
+            color={squareColor}
+            onChange={handleChange}
+          />
+        </Label>
+        <Square name="square" size={squareSize} color={squareColor} />
+
+        <Label htmlFor="circleSize" title="Circle size: ">
+          <InputNumber
+            name="circleSize"
+            size={circleSize}
+            onChange={handleChange}
+          />
+        </Label>
+        <Label htmlFor="circleColor" title="Circle color: ">
+          <InputColor
+            name="circleColor"
+            color={circleColor}
+            onChange={handleChange}
+          />
+        </Label>
+        <Circle name="circle" size={circleSize} color={circleColor} />
       </div>
     </div>
   )
